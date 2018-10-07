@@ -1,0 +1,89 @@
+{{- $css := resources.Get "css/main.css" | postCSS | minify -}}
+{{- $critical_css := resources.Get "css/critical.css" | minify -}}
+{{- $module_js := resources.Get "js/main-module.js" | minify -}}
+{{- $js := resources.Get "js/main.js" | minify -}}
+<!doctype html>
+<html lang="id">
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>IndoPride Legion</title>
+  <meta name="description" content="Welcome to Official IndoPride Contra Legion.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="apple-touch-icon" href="/favicon-256.png">
+  <link rel="icon" sizes="256x256" href="/favicon-256.png">
+
+  <link rel="preconnect" href="//contraindopride.netlify.com">
+  <link rel="preconnect" href="//rsms.me">
+  <link rel="preconnect" href="//cdn.polyfill.io">
+	<link rel="preconnect" href="//cdn.jsdelivr.net">
+
+  <link rel="stylesheet" href="{{ $critical_css.RelPermalink }}">
+
+  <script>const CSS_LINK = '{{ $css.RelPermalink }}'</script>
+
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+  <noscript><link rel="stylesheet" href="{{ $css.RelPermalink }}"></noscript>
+</head>
+<body class="leading-none font-inter text-black min-h-screen text-sm lg:text-base bg-grey-lightest border-t-4 border-grey-dark lg:py-16">
+	<section class="p-4 text-center">
+    <div class="max-w-sm mx-auto">
+  		<h1 class="mb-2 text-xl">Selamat datang di IndoPride</h1>
+  		<p class="leading-normal max-w-md mx-auto">Ini adalah website khusus untuk membantu guild member&nbsp;bermain.</p>
+    </div>
+	</section>
+  <section class="p-4">
+    <div class="bg-white rounded shadow max-w-sm mx-auto">
+      <h2 class="text-base p-2 border-b border-grey-lightest font-normal text-grey-darker bg-grey-lighter">Motto</h2>
+      <blockquote class="p-4 text-center">
+        <p class="font-serif text-xl leading-tight">Bermain sewajarnya, yang penting kita have fun.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="p-4">
+    <div class="bg-white rounded shadow max-w-sm mx-auto">
+      <h2 class="text-base p-2 border-b border-grey-lightest font-normal text-grey-darker bg-grey-lighter">Aturan</h2>
+      <ol class="p-4 ml-3 leading-normal mt-0 mb-0">
+        <li>Donate 5 kali setiap hari</li>
+        <li>Alien → Senin, Rabu, Jumat</li>
+        <li>War → Selasa, Kamis</li>
+        <li>
+          <div>Autokick:</div>
+          <ul class="ml-3 pl-0">
+            <li>[Free Player] lebih dari 3 hari nonaktif.</li>
+            <li>[VIP] lebih dari 7 hari nonaktif.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="p-4">
+    <div class="bg-white rounded shadow max-w-sm mx-auto">
+      <h2 class="text-base p-2 border-b border-grey-lightest font-normal text-grey-darker bg-grey-lighter">Lain - lain</h2>
+      <div class="p-4">
+        <a class="h-10 bg-blue-dark text-white flex items-center justify-center px-4 no-underline font-medium rounded-sm mb-2" href="https://contraindopride.page.link/schedule">Notifikasi Google Calendar</a>
+        <div class="leading-normal">Link ini akan menambahkan kalender contra yang berisi jadwal harian bermain. Biar kalian gak lupa.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-4">
+    <div class="bg-white rounded shadow max-w-sm mx-auto">
+      <h2 class="text-base p-2 border-b border-grey-lightest font-normal text-grey-darker bg-grey-lighter">Survey</h2>
+      <div class="p-4">
+        <a class="h-10 bg-grey-darkest text-white flex items-center justify-center px-4 no-underline font-medium rounded-sm mb-2" href="https://airtable.com/shrydIXN8XvoEJgAH">Survey Chat</a>
+        <div class="leading-normal">Isi survey platform chat ini biar komunikasi ke depan lebih lancar.</div>
+      </div>
+    </div>
+  </section>
+
+	<script type="module" src="{{ $module_js.RelPermalink }}"></script>
+	<script nomodule defer src="{{ $js.RelPermalink }}"></script>
+</body>
+</html>

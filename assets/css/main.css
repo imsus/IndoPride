@@ -1,0 +1,4 @@
+@import 'assets/css/tailwind/tailwind-preflight';
+@import 'assets/css/inter-ui.css';
+@import 'assets/css/tailwind/tailwind-components';
+@import 'assets/css/tailwind/tailwind-utilities';
